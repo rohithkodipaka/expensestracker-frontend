@@ -1,0 +1,35 @@
+<p>expense-form works!</p>
+<form [formGroup]="expenseForm" (ngSubmit)="submitExpense()" class = "expense-form">
+    <label>
+        Category:
+        <input formControlName="category" placeholder="e.g., Groceries"> 
+    </label>
+    <div *ngIf="expenseForm.get('category')?.touched && expenseForm.get('category')?.invalid" class="error">
+    Category is required.
+    </div>
+
+    <label>
+    Amount:
+    <input type="number" formControlName="amount" placeholder="Amount">
+    </label>
+    <div *ngIf="expenseForm.get('amount')?.touched && expenseForm.get('amount')?.invalid" class="error">
+    Enter a valid amount (> 0).
+    </div>
+
+    <label>
+    Currency:
+    <input formControlName="currency" placeholder="Currency (e.g., USD)">
+    </label>
+
+    <label>
+    Description:
+    <input formControlName="description" placeholder="Optional description">
+    </label>
+
+    <label>
+    Occurred At:
+    <input type="date" formControlName="occurredAt">
+    </label>
+
+    <button type="submit">Add Expense</button>
+</form>
