@@ -1,0 +1,27 @@
+<h2>Register</h2>
+<form [formGroup]="registerForm" (ngSubmit) = "register()">
+    <div>
+        <label>Full Name</label>
+        <input type="text" formControlName="fullName" placeholder="fullName">
+        <div *ngIf="registerForm.get('fullName')?.invalid && registerForm.get('fullName')?.touched">
+        Full Name is Required
+        </div>
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="Email">
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+        Email is Required
+        </div>
+    </div>
+    <div>
+        <label>Full Name</label>
+        <input type="password" formControlName="password" placeholder="Password">
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+        Password is Required (min 8 characters)
+        </div>
+    </div>
+    <div>
+        <button type="submit">Register</button>
+    </div>
+</form>
