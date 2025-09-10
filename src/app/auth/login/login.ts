@@ -28,7 +28,7 @@ export class Login {
 
       this.authService.login(loginData).subscribe({
         next:(res)=>{
-          this.router.navigate(['/expenses/create']);
+          this.router.navigate(['/expenses/create']).then(ok => console.log("Navigation success:", ok));
         },
         error:(err)=>{
           alert('Login failed: '+err.error?.message || err.message);

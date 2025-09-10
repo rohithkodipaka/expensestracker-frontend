@@ -4,11 +4,12 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators} f
 import { ExpensesService } from '../../api/expenses.service';
 import { Expense } from '../../models/expense.model';
 import {HttpErrorResponse} from '@angular/common/http';
+import { Dashboard } from '../dashboard/dashboard';
 
 @Component({
   selector: 'app-expense-form',
   standalone: true,
-  imports: [CommonModule,FormsModule,ReactiveFormsModule],
+  imports: [CommonModule,FormsModule,ReactiveFormsModule,Dashboard],
   templateUrl: './expense-form.html',
   styleUrls: ['./expense-form.scss']
 })

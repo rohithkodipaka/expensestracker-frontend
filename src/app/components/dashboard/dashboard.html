@@ -1,0 +1,20 @@
+<div class="dashboard" *ngIf="aggregates.length; else noData">
+    <h2>Monthly Aggregates</h2>
+    <table>
+      <tr>
+        <th>Month</th>
+        <th>Category</th>
+        <th>Total Amount</th>
+      </tr>
+      <tr *ngFor="let agg of aggregates">
+        <td>{{ agg.month }}/{{ agg.year }}</td>
+        <td>{{ agg.category }}</td>
+        <td>{{ agg.totalAmount | currency }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <ng-template #noData>
+        <p> No data available</p>
+  </ng-template>
+  
